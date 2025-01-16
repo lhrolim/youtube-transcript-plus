@@ -1,35 +1,15 @@
 import typescript from 'rollup-plugin-typescript2';
-
-const baseConfig = {
+export default {
   input: 'src/index.ts',
-  plugins: [typescript()],
-  external: ['phin'],
-};
-
-const buildFormats = [];
-
-// ES Module build
-const esConfig = {
-  ...baseConfig,
+  plugins: [
+    typescript({
+      tsconfig: './tsconfig.json',
+      useTsconfigDeclarationDir: true,
+    }),
+  ],
   output: {
-    file: 'dist/youtube-transcript.esm.js',
+    file: 'dist/youtube-transcript-plus.js',
     format: 'esm',
   },
+  external: ['fs/promises', 'path'],
 };
-buildFormats.push(esConfig);
-
-// Module build
-const umdConfig = {
-  ...baseConfig,
-  output: {
-    compact: true,
-    file: 'dist/youtube-transcript.common.js',
-    format: 'cjs',
-    name: 'YoutubeTranscript',
-    exports: 'named',
-  },
-};
-buildFormats.push(umdConfig);
-
-// Export config
-export default buildFormats;
