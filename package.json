@@ -45,7 +45,10 @@
   "files": [
     "dist/*"
   ],
-  "repository": "https://github.com/ericmmartin/youtube-transcript-plus.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericmmartin/youtube-transcript-plus.git"
+  },
   "publishConfig": {
     "access": "public"
   },
