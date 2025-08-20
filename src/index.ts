@@ -89,7 +89,7 @@ export class YoutubeTranscript {
 
     // Use global fetch for the POST. No public interface change.
     // Use configurable fetch for the POST to allow custom fetch logic.
-    const playerRes = await (config.videoFetch || defaultFetch)(playerEndpoint, {
+    const playerRes = await fetch(playerEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
