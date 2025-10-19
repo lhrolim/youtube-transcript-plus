@@ -2,10 +2,14 @@
   "name": "youtube-transcript-plus",
   "version": "1.1.1",
   "description": "Fetch transcript from a YouTube video",
-  "type": "module",
   "main": "dist/youtube-transcript-plus.js",
-  "module": "dist/youtube-transcript-plus.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/youtube-transcript-plus.js",
+      "require": "./dist/youtube-transcript-plus.js"
+    }
+  },
   "scripts": {
     "build": "rollup -c",
     "format": "prettier --write 'src/**/*.ts'",
@@ -47,12 +51,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericmmartin/youtube-transcript-plus.git"
+    "url": "git+https://github.com/lhrolim/youtube-transcript-plus.git"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/ericmmartin/youtube-transcript-plus",
+  "homepage": "https://github.com/lhrolim/youtube-transcript-plus",
   "engines": {
     "node": ">=18.0.0"
   }

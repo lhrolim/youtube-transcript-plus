@@ -1,5 +1,6 @@
-import typescript from 'rollup-plugin-typescript2';
-export default {
+const typescript = require('rollup-plugin-typescript2');
+
+module.exports = {
   input: 'src/index.ts',
   plugins: [
     typescript({
@@ -9,7 +10,8 @@ export default {
   ],
   output: {
     file: 'dist/youtube-transcript-plus.js',
-    format: 'esm',
+    format: 'cjs',
+    exports: 'named',
   },
   external: ['fs/promises', 'path'],
 };
