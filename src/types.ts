@@ -29,3 +29,11 @@ export interface TranscriptResponse {
   offset: number;
   lang?: string;
 }
+
+export interface TranscriptAvailability {
+  videoId: string;
+  available: boolean;
+  transcriptUrl?: string;
+  selectedLanguage?: string;
+  availableLanguages: string[];
+}
