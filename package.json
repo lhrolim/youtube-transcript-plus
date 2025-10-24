@@ -15,7 +15,8 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky"
+    "prepare": "npm run build || true",
+    "postinstall": "husky || true"
   },
   "author": "ericmmartin",
   "keywords": [
@@ -47,7 +48,10 @@
     "typescript": "^5.9.2"
   },
   "files": [
-    "dist/*"
+    "dist/*",
+    "src/**/*",
+    "rollup.config.js",
+    "tsconfig.json"
   ],
   "repository": {
     "type": "git",

@@ -70,3 +70,11 @@ async function batchAvailabilityCheck() {
   await batchAvailabilityCheck();
 })();
 
+
+
+
+
+
+
+
+
